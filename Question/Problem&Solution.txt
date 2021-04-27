@@ -1,0 +1,32 @@
+1. Spawn máy bay 
+- Sử dụng hàm Instantiate(GameObject gameObject, Vector3 position, Quaternion rotation) -> https://docs.unity3d.com/ScriptReference/Object.Instantiate.html 
+- Quaternion.identity >> Nếu k muốn xoay object
+
+2. Vị trí spawn máy bay 
+- Có 3 hệ tọa độ chính trong Unity cần quan tâm: -> https://www.stdio.vn/lap-trinh-game/co-ban-ve-camera-trong-unity-p10g3U
+	+ World Coordinate: Hệ tọa độ thế giới thực trong game >> Vị trí của object, các thuộc tính của Transform (localPosition, localRotation, localScale,...)
+		--> Ứng dụng lấy vị trí của object
+	
+	+ Viewport Coordinate: Hệ tọa độ của camera (0,0) - (1,1)
+	
+	+ Screen Coordinate: Hệ tọa độ màn hình hiển thị (0,0) - (screenW, screenH) >> Vị trí con trỏ chuột (click, hover,...) 
+		--> Ứng dụng lấy vị trí con trỏ chuột 
+
+- Vị trí spawn máy bay chính là vị trí trong World Coordinate
+- Hình dung vị trí muốn spawn máy bay trên màn hình, sau đó chuyển đổi từ Screen Coordinate sang World Coordinate để có được tham số truyền vào Instantiate
+- Chuyển đổi bằng hàm này: Camera.main.ScreenToWorldPoint(Vector3 position) 
+
+3. Vị trí ngẫu nhiên = giá trị ngẫu nhiên
+- Sử dụng hàm Random.Range(min, max) >> hàm trả về int/float tùy dạng tham số truyền vào 
+
+4. Xoay sprite để máy bay hiển thị đúng hướng 
+- Thay đổi localScale, bằng cách gắn lại nó với 1 vector mới: object.transform.localScale = new Vector3(-1,1,1)
+
+5. Di chuyển máy bay đúng hướng 
+- Kiểm tra vị trí ban đầu của máy bay (khi mới spawn) để biết nó đc spawn từ phía trái hay phải
+- Di chuyển máy bay trái/phải tùy vào vị trí ban đầu
+- Sử dụng hàm transform.Translate (Vector3.left * m_speed * Time.deltaTime) hoặc transform.Translate (Vector3.right * m_speed * Time.deltaTime)
+
+
+
+
