@@ -27,6 +27,16 @@
 - Di chuyển máy bay trái/phải tùy vào vị trí ban đầu
 - Sử dụng hàm transform.Translate (Vector3.left * m_speed * Time.deltaTime) hoặc transform.Translate (Vector3.right * m_speed * Time.deltaTime)
 
+6. Sử dụng Define.cs để khai báo biến global 
+- K cần gắn vào 1 component nào từ Unity, chỉ cần khai báo là có thể truy cập và sử dụng từ script khác 
+- Do lần đầu camera chưa init nên đọc thông tin kt màn hình sai, cần check lại 
+
+7. Máy bay không hiển thị trong cửa sổ Game, chỉ hiển thị trong cửa sổ Scene 
+- Do thuộc tính z đang bị gán ngẫu nhiên ??? (z = -10)
+- Khai báo giá trị z (z=10) tại vector position khi truyền vào hàm Instantiate 
 
 
+8. Mất animation:
+- Khi tạo mới animation, cho nó vào folder Animation
+- Sẽ có 2 file mới đc tạo, nhớ commit đủ: .anim.meta, .controller.meta 
 

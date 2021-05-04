@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2880045c2d8b00a4987447c977192ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helicopter: {fileID: 8541144383840365715, guid: 71008a48af6209f44be313466471e885,
+  helicopter: {fileID: 8541144383840365715, guid: 21ada807ab19c4d4583caceda568d870,
     type: 3}
 --- !u!1001 &7434149583742413720
 PrefabInstance:

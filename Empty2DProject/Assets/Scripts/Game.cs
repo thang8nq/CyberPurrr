@@ -34,10 +34,10 @@ public class Game : MonoBehaviour
         float randY = Random.Range(0.75f * Define.SCREEN_H, 0.95f * Define.SCREEN_H); //the range (height) helicopter spawn
 
         //left side
-        Vector3 randPosL = Camera.main.ScreenToWorldPoint(new Vector3(0, randY));
+        Vector3 randPosL = Camera.main.ScreenToWorldPoint(new Vector3(0, randY, 1));
 
         //right side 
-        Vector3 randPosR = Camera.main.ScreenToWorldPoint(new Vector3(Define.SCREEN_W, randY));
+        Vector3 randPosR = Camera.main.ScreenToWorldPoint(new Vector3(Define.SCREEN_W, randY, 1));
         int randValue = Random.Range(-1, 2);
         if (randValue > 0)
             isFromLeft = true;
