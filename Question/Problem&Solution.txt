@@ -40,3 +40,5 @@
 - Khi tạo mới animation, cho nó vào folder Animation
 - Sẽ có 2 file mới đc tạo, nhớ commit đủ: .anim.meta, .controller.meta 
 
+9. Làm việc với vị trí của object trên màn hình 
+- Convert hết về WorldPoint : Camera.main.ScreenToWorldPoint(new Vector3(Define.SCREEN_W, Define.SCREEN_H));

@@ -8,6 +8,8 @@ public class Define : MonoBehaviour
     public static float SCREEN_H = Screen.height;
     private bool isSetUpDone = false;
 
+    public static float GROUND_POS_Y = -4.0f;
+
     public void Update()
     {
         if(!isSetUpDone)
