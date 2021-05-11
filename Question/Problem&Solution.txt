@@ -42,3 +42,23 @@
 
 9. Làm việc với vị trí của object trên màn hình 
 - Convert hết về WorldPoint : Camera.main.ScreenToWorldPoint(new Vector3(Define.SCREEN_W, Define.SCREEN_H));
+
+
+10. ObjectPool pattern: https://learn.unity.com/tutorial/introduction-to-object-pooling#5ff8d015edbc2a002063971d 
+
+11. Set object inactive khi ra khỏi màn hình game (để lv với Object Pool): 
+https://answers.unity.com/questions/1230388/how-to-destroy-object-after-it-moves-out-of-screen.html
+	void OnBecameInvisible() {
+         gameObject.SetActive(false);
+    }
+
+ 12. Sau khi implement ObjectPool, code sẽ phải thay đổi để phù hợp và có một số lỗi phát sinh 
+ - Khi máy bay ra khỏi màn hình, nó sẽ đc set là inactive, sau đó nó sẽ được lấy ra và sử dụng lại, lúc này chiều dịch chuyển của máy bay sẽ bị sai 
+ + Nguyên nhân: Do máy bay đc tạo 1 lần duy nhất > gọi hàm start 1 lần > tính toán chiều tịnh tiến máy bay trong start là sai 
+ + Giải quyết: Tính toán lại chiều tịnh tiến máy bay (isFromLeft) trong 2 hàm có sẵn của Unity: OnBecameVisible & OnBecameInvisible 
+
+ - Hàm SpawnHelicopter cũng cần sửa đổi 1 chút, tính toán chiều helicopter (flip) dựa trên vị trí của helicopter khi lấy ra (có thể là tạo mới, có thể là lấy từ objectpool) 
+
+ 13. Máy bay spawn nhiều hơn 1 soilder
+ - Do có hàm invoke => sẽ gọi sau hàm update 1 thời gian 
+ --> Ngay khi check chưa spawn thì gán biến đã spawn là true, sau đó mới gọi hàm spawn soilder

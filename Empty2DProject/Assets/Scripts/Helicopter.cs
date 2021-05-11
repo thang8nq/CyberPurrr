@@ -26,10 +26,10 @@ public class Helicopter : MonoBehaviour
 
         if(!isSpawnSoilder)
         {
+            isSpawnSoilder = true;
             float randomTime = Random.Range(1, 3);
             Invoke("SpawnSoilder", randomTime);
             SpawnSoilder();
-            isSpawnSoilder = true;
         }
     }
 
@@ -45,5 +45,15 @@ public class Helicopter : MonoBehaviour
             instance.transform.localScale = new Vector3(-1, 1, 1);
 
         return instance;
+    }
+
+    public void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void OnBecameVisible()
+    {
+        isFromLeft = transform.position.x > 0 ? false : true;
     }
 }
