@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    public GameObject helicopter;
-
     public static float timeInterval = 1.0f;
     public static float timeSpawn = 0f;
     public static bool isFromLeft = true; 

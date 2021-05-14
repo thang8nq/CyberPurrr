@@ -14,6 +14,8 @@ public class Define : MonoBehaviour
     public static float BULLET_ANGLE_ROTATE_MAX = 100.0f;
     public static float BULLET_ANGLE_ROTATE_MIN = -100.0f;
 
+    public static Vector3 bulletBasePosition; 
+
     public void Update()
     {
         if(!isSetUpDone)
