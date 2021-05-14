@@ -70,10 +70,7 @@ https://answers.unity.com/questions/1230388/how-to-destroy-object-after-it-moves
  ==> Để xử lý va chạm 2 vật, cần phải có ở cả 2 BoxCollider2D và 1 trong hai phải có RigitBody2D 
  
  
- 
- 
- 
- 
+ 15. Chọn sprite Bullet -> Inspector>Pivot>Bottom để xoay bullet quanh chân của nó
  
  
  

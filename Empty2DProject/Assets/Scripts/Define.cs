@@ -10,7 +10,9 @@ public class Define : MonoBehaviour
 
     public static float GROUND_POS_Y = -4.0f;
 
-    public static Vector3 playerPosition; 
+    public static Vector3 playerPosition;
+    public static float BULLET_ANGLE_ROTATE_MAX = 100.0f;
+    public static float BULLET_ANGLE_ROTATE_MIN = -100.0f;
 
     public void Update()
     {
