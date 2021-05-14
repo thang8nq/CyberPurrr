@@ -25,6 +25,18 @@ public class Soilder : MonoBehaviour
         {
             isOnGround = true;
             anim.SetBool("isOnGround", isOnGround);
+
+            float soilderPosX = this.transform.position.x;
+            if (soilderPosX < Define.playerPosition.x)
+                this.transform.Translate(Vector3.right * m_speed * Time.deltaTime);
+            else
+                this.transform.Translate(Vector3.left * m_speed * Time.deltaTime);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+            gameObject.SetActive(false);
     }
 }

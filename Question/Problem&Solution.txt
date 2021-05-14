@@ -62,3 +62,24 @@ https://answers.unity.com/questions/1230388/how-to-destroy-object-after-it-moves
  13. Máy bay spawn nhiều hơn 1 soilder
  - Do có hàm invoke => sẽ gọi sau hàm update 1 thời gian 
  --> Ngay khi check chưa spawn thì gán biến đã spawn là true, sau đó mới gọi hàm spawn soilder
+ 
+ 14. Để xử lý va chạm Soilder vs Base
+ - Base phải có BoxCollider2D
+ - Soilder phải có cả BoxCollider2D và RigitBody2D (nhớ bỏ gravity scale) 
+ - Chọn isTrigger trong BoxCollider2D đv Soilder > OnTriggerEnter2D và xử lý va chạm >> dùng hàm này hiệu năng tốt hơn OnCollisionEnter2D  
+ ==> Để xử lý va chạm 2 vật, cần phải có ở cả 2 BoxCollider2D và 1 trong hai phải có RigitBody2D 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -10,6 +10,8 @@ public class Define : MonoBehaviour
 
     public static float GROUND_POS_Y = -4.0f;
 
+    public static Vector3 playerPosition; 
+
     public void Update()
     {
         if(!isSetUpDone)
