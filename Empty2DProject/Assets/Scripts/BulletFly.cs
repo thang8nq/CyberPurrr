@@ -21,4 +21,9 @@ public class BulletFly : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+
+    }
 }

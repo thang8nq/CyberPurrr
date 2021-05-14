@@ -56,4 +56,13 @@ public class Helicopter : MonoBehaviour
     {
         isFromLeft = transform.position.x > 0 ? false : true;
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.CompareTag("Bullet"))
+        {
+            gameObject.SetActive(false);
+            col.gameObject.SetActive(false);
+        }
+    }
 }

@@ -25,13 +25,13 @@ public class Game : MonoBehaviour
         }
 
         //detect click 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 pos = Input.mousePosition;
-            Collider2D hitCollider = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(pos));
-            if(hitCollider != null && hitCollider.transform.tag == "Helicopter")
-                hitCollider.gameObject.SetActive(false);
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Vector3 pos = Input.mousePosition;
+        //    Collider2D hitCollider = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(pos));
+        //    if(hitCollider != null && hitCollider.transform.tag == "Helicopter")
+        //        hitCollider.gameObject.SetActive(false);
+        //}
     }
 
     public GameObject SpawnHelicopter()
