@@ -37,6 +37,12 @@ public class Soilder : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
+        {
+
+        }
+        else if(col.CompareTag("Bullet"))
+        {
             gameObject.SetActive(false);
+        }
     }
 }

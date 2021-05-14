@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletFly : MonoBehaviour
 {
-    private float m_speed = 5.0f;
+    private float m_speed = 10.0f;
 
     // Start is called before the first frame update
     void Start()

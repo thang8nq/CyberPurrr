@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static float timeInterval = 0.25f;
+    public static float timeInterval = 0.5f;
     public static float timeSpawn = 0f;
 
     // Start is called before the first frame update
@@ -37,6 +37,11 @@ public class Player : MonoBehaviour
         difference.Normalize();
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         rotationZ = rotationZ - 90; //just test then subtract 90 to sync correctly on UI
+        if (rotationZ >= Define.BULLET_ANGLE_ROTATE_MAX)
+            rotationZ = Define.BULLET_ANGLE_ROTATE_MAX;
+
+        if (rotationZ <= Define.BULLET_ANGLE_ROTATE_MIN)
+            rotationZ = Define.BULLET_ANGLE_ROTATE_MIN;
 
         instance.transform.position = Define.bulletBasePosition;
         instance.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
