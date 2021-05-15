@@ -16,7 +16,11 @@ public class Define : MonoBehaviour
 
     public static Vector3 bulletBasePosition;
 
-    public static float BULLET_FORCE = 50.0f; 
+    public static float BULLET_FORCE = 50.0f;
+    public static bool isGameOver = false;
+    public static bool isGameBegin = false;
+
+    public static int score = 0; 
 
     public void Update()
     {

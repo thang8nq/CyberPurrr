@@ -8,7 +8,7 @@ public class Soilder : MonoBehaviour
     private bool isOnGround = false;
     public Animator anim;
     private Rigidbody2D rb;
-    private bool m_beHit = false; 
+    private bool m_beHit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Soilder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.transform.position.y > Define.GROUND_POS_Y)
+        if (this.transform.position.y > Define.GROUND_POS_Y)
         {
             this.transform.Translate(Vector3.down * Time.deltaTime * m_speed);
         }
@@ -43,17 +43,24 @@ public class Soilder : MonoBehaviour
         {
 
         }
-        else if(col.CompareTag("Bullet"))
+        else if (col.CompareTag("Bullet"))
         {
             Vector2 vecForce = col.gameObject.transform.position;
             rb.AddForce(vecForce * Define.BULLET_FORCE);
             rb.gravityScale = 1;
             m_beHit = true;
             gameObject.transform.rotation = Quaternion.Euler(0, 0, Random.RandomRange(30, 60));
+
+            HitSoilder();
         }
-        else if(col.CompareTag("Ground"))
+        else if (col.CompareTag("Ground"))
         {
             gameObject.SetActive(false);
         }
+    }
+
+    public void HitSoilder()
+    {
+        Define.score += 1; 
     }
 }

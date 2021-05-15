@@ -50,7 +50,12 @@ public class Player : MonoBehaviour
         return instance;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.CompareTag("Soilder"))
+        {
+            Time.timeScale = 0;
+            Define.isGameOver = true; 
+        }
     }
 }

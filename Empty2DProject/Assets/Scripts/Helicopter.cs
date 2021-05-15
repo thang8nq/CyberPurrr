@@ -63,6 +63,12 @@ public class Helicopter : MonoBehaviour
         {
             gameObject.SetActive(false);
             col.gameObject.SetActive(false);
+            HitHelicopter();
         }
+    }
+
+    public void HitHelicopter()
+    {
+        Define.score += 1; 
     }
 }
