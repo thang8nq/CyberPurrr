@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         timeSpawn += Time.deltaTime;
 
         //detect click 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
             if (timeSpawn > timeInterval)
             {
