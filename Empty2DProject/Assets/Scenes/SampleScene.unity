@@ -415,7 +415,6 @@ GameObject:
   - component: {fileID: 1170442410}
   - component: {fileID: 1170442411}
   - component: {fileID: 1170442412}
-  - component: {fileID: 1170442413}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -475,21 +474,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObjects: []
   objectToPool: {fileID: 8541144383840365715, guid: 21ada807ab19c4d4583caceda568d870,
-    type: 3}
---- !u!114 &1170442413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1170442408}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8294bcdc720ec439bfd46a6367ca26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectToPool: {fileID: 3056476873338608910, guid: 6ab47fef0767682418c284047f6cbff3,
     type: 3}
 --- !u!1 &2130384466
 GameObject:
