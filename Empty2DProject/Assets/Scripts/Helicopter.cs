@@ -27,7 +27,7 @@ public class Helicopter : MonoBehaviour
         if(!isSpawnSoilder)
         {
             isSpawnSoilder = true;
-            float randomTime = Random.Range(2, 4);
+            float randomTime = Random.Range(3, 6);
             Invoke("SpawnSoilder", randomTime);
             SpawnSoilder();
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Soilder : MonoBehaviour
 {
-    private float m_speed = 1.5f;
+    private float m_speed = 1f;
     private bool isOnGround = false;
     public Animator anim;
     private Rigidbody2D rb;
@@ -15,6 +15,7 @@ public class Soilder : MonoBehaviour
     {
         anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        m_speed = Random.Range(1.0f, 1.5f);
     }
 
     // Update is called once per frame
