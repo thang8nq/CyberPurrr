@@ -6,11 +6,16 @@ public class Player : MonoBehaviour
 {
     public static float timeInterval = 0.5f;
     public static float timeSpawn = 0f;
+    public Animator anim;
+    public static bool isAlive = true; 
 
     // Start is called before the first frame update
     void Start()
     {
         Define.playerPosition = gameObject.transform.position;
+        anim = gameObject.GetComponent<Animator>();
+        isAlive = true;
+        anim.SetBool("isAlive", isAlive);
     }
 
     // Update is called once per frame
@@ -56,6 +61,8 @@ public class Player : MonoBehaviour
         {
             if(!col.gameObject.GetComponent<Soilder>().m_beHit)
             {
+                isAlive = false; 
+                anim.SetBool("isAlive", isAlive);
                 Time.timeScale = 0;
                 Define.isGameOver = true;
             }
