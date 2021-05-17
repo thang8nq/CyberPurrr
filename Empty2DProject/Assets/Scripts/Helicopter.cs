@@ -27,7 +27,7 @@ public class Helicopter : MonoBehaviour
         if(!isSpawnSoilder)
         {
             isSpawnSoilder = true;
-            float randomTime = Random.Range(1, 3);
+            float randomTime = Random.Range(2, 4);
             Invoke("SpawnSoilder", randomTime);
             SpawnSoilder();
         }
@@ -50,6 +50,7 @@ public class Helicopter : MonoBehaviour
     public void OnBecameInvisible()
     {
         gameObject.SetActive(false);
+        isSpawnSoilder = false;
     }
 
     public void OnBecameVisible()

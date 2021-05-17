@@ -8,7 +8,7 @@ public class Soilder : MonoBehaviour
     private bool isOnGround = false;
     public Animator anim;
     private Rigidbody2D rb;
-    private bool m_beHit = false;
+    public bool m_beHit = false;
 
     // Start is called before the first frame update
     void Start()

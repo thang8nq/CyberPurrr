@@ -54,8 +54,11 @@ public class Player : MonoBehaviour
     {
         if (col.CompareTag("Soilder"))
         {
-            Time.timeScale = 0;
-            Define.isGameOver = true; 
+            if(!col.gameObject.GetComponent<Soilder>().m_beHit)
+            {
+                Time.timeScale = 0;
+                Define.isGameOver = true;
+            }
         }
     }
 }
